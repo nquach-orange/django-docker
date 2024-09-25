@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page d'Accueil</title>
+    <!-- Lien vers le fichier CSS -->
+    <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
+
+</head>
+<body>
+    <!-- Barre de navigation -->
+    <div class="navbar">
+        <a href="{% url 'home' %}">Accueil</a>
+        <a href="{% url 'livres' %}">Livres</a>
+        <a href="{% url 'categories' %}">Catégories</a>
+        <a href="{% url 'auteurs' %}">Auteurs</a>
+        <!-- Ajoute d'autres liens si nécessaire -->
+    </div>
+
+    <div class="homepage-container">
+        <h1>Bienvenue à la Bibliothèque 2024</h1>
+        <p>Découvrez notre bibliothèque en ligne où vous pouvez explorer une vaste collection de livres, emprunter des ouvrages passionnants, et rechercher des titres par date de publication, catégorie et plus encore. Notre site a été conçu pour vous offrir une expérience de lecture enrichissante et facile d'accès. Profitez de nos ressources et plongez dans un monde de connaissance et de divertissement.</p>
+    </div>
+</body>
+</html>

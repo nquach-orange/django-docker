@@ -1,0 +1,5 @@
+Django>=4.0,<5.0
+djangorestframework>=3.12,<4.0
+psycopg2-binary>=2.9,<3.0  # If you're using PostgreSQL
+# Add any other dependencies your project needs
+psycopg[binary]==3.1.12

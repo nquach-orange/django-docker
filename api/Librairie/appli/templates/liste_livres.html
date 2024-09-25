@@ -1,0 +1,95 @@
+
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liste des Livres</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+            line-height: 1.6;
+        }
+
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+            margin-bottom: 20px;
+        }
+
+        .book-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr); /* 3 colonnes */
+            gap: 20px;
+            padding: 0;
+            list-style-type: none;
+        }
+
+        .book-item {
+            background-color: #fff;
+            padding: 15px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+
+        .book-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+        }
+
+        strong {
+            font-size: 1.2em;
+            color: #2980b9;
+        }
+
+        .details {
+            color: #7f8c8d;
+            margin-top: 10px;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+            color: #7f8c8d;
+            font-size: 0.9em;
+        }
+
+        /* Responsive grid: 2x2 sur les écrans moyens, 1x1 sur les petits écrans */
+        @media (max-width: 900px) {
+            .book-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 600px) {
+            .book-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Liste des Livres</h1>
+    <ul class="book-grid">
+        {% for livre in livres %}
+            <li class="book-item">
+                <strong>{{ livre.titre }}</strong>
+                <p class="details">Auteur: {{ livre.auteur }}<br>ISBN: {{ livre.isbn }}<br>Genre: {{ livre.genre }}</p>
+            </li>
+        {% endfor %}
+    </ul>
+
+    <div class="footer">
+        <p>Bibliothèque &copy; 2024</p>
+    </div>
+
+</body>
+</html>
